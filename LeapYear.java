@@ -1,22 +1,26 @@
 public class LeapYear{
-	public static void isLeapYear (int n){
+	public static boolean isLeapYear (int n){
 		if ((n % 4 ==0 && n % 100 !=0)|| n % 400 == 0 ){
-			System.out.println(n + " is a leap year!" );
-			return;
+			
+			return true;
 		}
-			System.out.println(n + " is not a leap year!" ); 
+		return false;		
 	}
 
 	public static void main(String[] args) {
-		
-		// will pass
-		isLeapYear(2000);
-		isLeapYear(2004);
 
-		// wiil fail
-		isLeapYear(1900);
-		isLeapYear(2003);
-		isLeapYear(2100);
+		for (String value : args){
+
+		int year= Integer.parseInt(value); 
+
+		if (isLeapYear(year)){
+			System.out.println(year + " is a leap year!" );
+			
+		}else {
+		System.out.println(year + " is not a leap year!" );
+		} 
+}
+
 
 	}
 
